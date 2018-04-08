@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
-    'django.contrib.sites',
+    # 'django.contrib.sites',
 
     # 'allauth.socialaccount.providers.facebook',
     # 'allauth.socialaccount.providers.google',
