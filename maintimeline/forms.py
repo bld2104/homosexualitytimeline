@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from myapp.models import Comment
+# from myapp.models import Comment
  
 class EventCreate(ModelForm):
     class Meta:

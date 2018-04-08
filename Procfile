@@ -1,1 +1,1 @@
-web: gunicorn homosexualitytimeline.wsgi
+web: gunicorn homosexualitytimeline.wsgi:application --preload --workers 1

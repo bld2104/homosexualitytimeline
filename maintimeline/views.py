@@ -49,8 +49,8 @@ class EventDelete(DeleteView):
     exclude = ['created_by']
     success_url = reverse_lazy('event-list')
 
-class ProfilePageView(TemplateView):
-    template_name = 'maintimeline/profile.html'
+# class ProfilePageView(TemplateView):
+#     template_name = 'maintimeline/profile.html'
 
 
 class EventDetailView(DetailView):
