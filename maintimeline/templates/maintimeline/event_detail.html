@@ -1,0 +1,25 @@
+{% extends 'maintimeline/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+	<div style="height:25px"></div>
+	<div class="alert alert-success">
+  <strong>Success!</strong> Your event was added to the timeline.
+</div>
+
+
+	<h1>{{ object.headline }}</h1>
+<p>{{ object.category }}</p>
+<p>City: {{ object.city }}</p>
+<p>State: {{ object.state|date }}</p>
+<p>Country: {{ object.country }}</p>
+<p>Latitude: {{ object.latitude }}</p>
+<p>Longitude: {{ object.longitude }}</p>
+<p>General Event?: {{ object.is_general }}</p>
+<p>Descriptione: {{ object.description }}</p>
+<p>Image 1: {{ object.image1 }}</p>
+<p>Image 2: {{ object.image2 }}</p>
+
+</div>
+{% endblock %} 
