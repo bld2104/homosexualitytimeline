@@ -26,12 +26,7 @@ SECRET_KEY = "Pw>_hm$Rg$1LUP7@H__nwH93YteTn"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -114,21 +109,7 @@ WSGI_APPLICATION = 'homosexualitytimeline.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'homosexualitytimeline',
-        'USER': 'admin',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-
-
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # DATABASES['default'] =  dj_database_url.config()
 
