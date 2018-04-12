@@ -109,7 +109,8 @@ WSGI_APPLICATION = 'homosexualitytimeline.wsgi.application'
 #     }
 # }
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = env.db('DATABASE_URL')  # noqa F405
+DATABASES['default']['CONN_MAX_AGE'] = env.int('CONN_MAX_AGE', default=60)
 
 # DATABASES['default'] =  dj_database_url.config()
 
