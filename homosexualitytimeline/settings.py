@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for homosexualitytimeline project on Heroku. For more info, see:
 https://github.com/heroku/heroku-django-template
@@ -11,8 +13,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import dj_database_url
-import psycopg2
-from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,10 +22,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "Pw>_hm$Rg$1LUP7@H__nwH93YteTn"
+SECRET_KEY = "local_settings"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Application definition
 
@@ -80,19 +80,16 @@ TEMPLATES = [
 
 
 AUTHENTICATION_BACKENDS = (
-    
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
     # 'allauth.account.auth_backends.AuthenticationBackend',
-    
 )
 
 
 
 SITE_ID = 1
-
 
 WSGI_APPLICATION = 'homosexualitytimeline.wsgi.application'
 
@@ -110,12 +107,14 @@ WSGI_APPLICATION = 'homosexualitytimeline.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
-# DATABASES['default'] =  dj_database_url.config()
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -168,7 +167,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-try:
-    from homosexualitytimeline.local_settings import *
-except ImportError:
-    pass
