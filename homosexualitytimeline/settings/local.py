@@ -1,5 +1,8 @@
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+from .base import *
+
+
+DEBUG = True
+SECRET_KEY = 'asdfasdfasdf'
 
 DATABASES = {
     'default': {
@@ -7,5 +10,3 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-DEBUG = True
