@@ -11,6 +11,7 @@ from maintimeline.models import Event
 class HomePageView(ListView):
     model = Event
     template_name = 'maintimeline/index.html'
+    queryset = Event.objects.all().order_by('date')
 
 # class HomePageView(View):
 

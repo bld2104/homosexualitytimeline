@@ -56,7 +56,13 @@ class Event(models.Model):
     def get_absolute_url(self):
         return reverse('event-detail', kwargs={'pk': self.pk})
 
+    def __str__(self):
+        return 'Event: ' + self.headline
+
     @property
     def image_url(self):
         if self.image1 and hasattr(self.image1, 'url'):
             return self.image1.url
+
+    # class Meta:
+        # ordering = ['date']
