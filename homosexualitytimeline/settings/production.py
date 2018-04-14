@@ -5,7 +5,7 @@ import dj_database_url
 
 DEBUG = False
 
-SECRET_KEY = 'asdfasdf'
+SECRET_KEY = 'asdfasdfasdojadsoifjadsoifj'
 
 DATABASES = {
     'default': dj_database_url.config(
