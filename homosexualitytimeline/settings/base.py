@@ -83,27 +83,6 @@ SITE_ID = 1
 
 WSGI_APPLICATION = 'homosexualitytimeline.wsgi.application'
 
-
-<<<<<<< Updated upstream:homosexualitytimeline/settings/base.py
-=======
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-
-# DATABASES['default'] =  dj_database_url.config()
->>>>>>> Stashed changes:homosexualitytimeline/settings.py
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
