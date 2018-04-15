@@ -70,7 +70,13 @@ div.fixed {
         {% for event in object_list %}
         <div class="row event" style="height:40vh; text-align:center">
 <h1>{{ event.headline }}</h1>
-        <date>{{ event.date }}</date>
+{% if event.year < 0 %}
+<date>{{ event.year|stringformat:"s"|slice:"1:" }} BCE</date>
+{% endif %}
+
+{% if event.year > 0 %}
+        <date>{{ event.year }}</date>
+    {% endif %}
        <div style="width:100%; height:50px; text-align:center">
         <img height="50px" width="auto" src="https://barbaradonnini.com/homosexualitytimeline/{{ event.image_url|default_if_none:'#' }}" />
       </div>

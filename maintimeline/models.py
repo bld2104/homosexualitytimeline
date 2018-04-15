@@ -37,9 +37,15 @@ class Event(models.Model):
         decimal_places=6
     )
     is_general = models.NullBooleanField()
+    approx_year = models.NullBooleanField()
     date = models.DateField(
         null=True,
-        blank=True,)
+        blank=True,
+        )
+    year = models.IntegerField(
+        null=True,
+        blank=True,
+        )
     description = models.TextField(
         null=True,
         blank=True,
