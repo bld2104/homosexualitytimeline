@@ -13,6 +13,11 @@ class HomePageView(ListView):
     template_name = 'maintimeline/index.html'
     queryset = Event.objects.all().order_by('year')
 
+class TestView(ListView):
+    model = Event
+    template_name = 'maintimeline/test.html'
+    queryset = Event.objects.all().order_by('year')
+
 # class HomePageView(View):
 
 #     def get(self, request, *args, **kwargs):

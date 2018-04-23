@@ -19,6 +19,7 @@ content="A timeline of the history of homosexuality from a Christian ethics pers
      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="{% static "style.css" %}">
+<link rel="stylesheet" href="{% static "slick.css" %}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <link rel="icon"
@@ -37,7 +38,7 @@ content="A timeline of the history of homosexuality from a Christian ethics pers
 <div class="hidden-xs ">
   <div class="row" style="background-color: #1a5e63; padding-top: 9px; padding-left: 30px; height: 50px">
 <div class="col-lg-5 col-md-5 col-sm-5 hidden-xs">
-  <h5 style="color:white">History of Christian Views towards Homosexuality</h5>
+ <a href="/"> <h5 style="color:white">History of Christian Views towards Homosexuality</h5></a>
   </div>
 <div class="col-lg-7 col-md-7 col-sm-7 hidden-xs" style="text-align:right">
   
@@ -63,7 +64,7 @@ content="A timeline of the history of homosexuality from a Christian ethics pers
 
     <div class="row" style="background-color: #1a5e63; height: 50px; padding-left: 30px; padding-right:10px; padding-top: 15px">
 <div class="col-xs-10">
-<h5 style="color:white">History of Christian Views towards Homosexuality</h5>
+<a href="/"><h5 style="color:white">History of Christian Views towards Homosexuality</h5></a>
 </div>
 <div class="col-xs-2">
 
@@ -118,6 +119,28 @@ content="A timeline of the history of homosexuality from a Christian ethics pers
 <script  src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+
+<script src="{% static "slick.js" %}"></script>
+<script>
+$(document).ready(function(){
+$('.carouselinfinite').slick({
+  dots: false, 
+  arrows: false, 
+  slidesToShow: 1,
+   slidesToScroll: 1,
+    centerMode: false,
+     draggable: true,
+      speed: 12000, 
+      autoplay: true,
+       autoplaySpeed: 0,
+        vertical: false,
+         infinite: true,
+          pauseOnHover: true,
+           cssEase: 'linear',
+});
+});
+</script>
+
 <!-- <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
 
