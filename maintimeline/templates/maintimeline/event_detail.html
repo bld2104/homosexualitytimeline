@@ -2,9 +2,20 @@
 {% load static %}
 
 {% block content %}
+<style>
+.detailimage{
+	max-height:100%;
+	max-width:100%;
+	} 
+
+</style>
+
 <div class="container">
 	<div style="height:25px"></div>
 
+<div class="row">
+	<p><a href="/" class="btn btn-primary"><< Back to Timeline</a></p>
+</div>
 <div class="row">
 	<h1>{{ object.headline }}</h1>
 {% if object.category %}
@@ -14,7 +25,7 @@
 	<div style="height:25px"></div>
 <div class="row" style="height:400px">
 	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	<img height="100%" width="auto" src="https://barbaradonnini.com/homosexualitytimeline/{{ object.image_url|default_if_none:'#' }}" />
+	<img class="detailimage" src="https://barbaradonnini.com/homosexualitytimeline/{{ object.image_url|default_if_none:'#' }}" />
 </div>
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 {% if object.category %}
@@ -40,5 +51,39 @@
 <p>{{ object.description }}</p>
 </div>
 
+{% if object.image2 %}
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<img height="100%" width="auto" src="https://barbaradonnini.com/homosexualitytimeline/{{ object.image2_url|default_if_none:'#' }}" />
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	<iframe
+  width="100%"
+  height="450px"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBkBf3h_ywYPvZ5JKJUndC4Kua-QxQ2PAA
+
+    &q={{ object.city }},{{object.county}}" allowfullscreen>
+</iframe>
+</div>
+</div>
+{% else %}
+<div class="row">
+
+	<iframe
+  width="100%"
+  height="450px"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBkBf3h_ywYPvZ5JKJUndC4Kua-QxQ2PAA
+
+    &q={{ object.city }},{{object.county}}" allowfullscreen>
+</iframe>
+</div>
+{% endif %}
+
+<div class="row">
+	<p><a href="/" class="btn btn-primary"><< Back to Timeline</a></p>
+</div>
 </div>
 {% endblock %} 

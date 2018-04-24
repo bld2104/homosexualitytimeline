@@ -58,6 +58,14 @@ class Event(models.Model):
         null=True,
         blank=True,
     )
+    image_source = models.URLField(
+        null=True,
+        blank=True,
+        )
+    image_caption = models.TextField(
+        null=True,
+        blank=True,
+        )
 
     def get_absolute_url(self):
         return reverse('event-detail', kwargs={'pk': self.pk})
