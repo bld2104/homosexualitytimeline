@@ -25,7 +25,7 @@
 	<div style="height:25px"></div>
 <div class="row" style="height:400px">
 	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	<img class="detailimage" src="https://barbaradonnini.com/homosexualitytimeline/{{ object.image_url|default_if_none:'#' }}" />
+	<img class="detailimage" src="https://barbaradonnini.com/homosexualitytimeline/{{ object.image1|default_if_none:'#' }}" />
 	<br>
 		<p style="font-style:italic; color:#A9A9A9">{{object.image_caption}} <a href="{{object.image_source}}" target="_blank">Image source</a>.</p>
 
@@ -54,7 +54,7 @@
 </div>
 
 	<div style="height:25px"></div>
-<div class="row">
+<div class="row" style="margin-top:50px">
 <p>{{ object.description }}</p>
 </div>
 <div class="row" style="margin-top:20px">
@@ -63,7 +63,7 @@
 {% if object.image2 %}
 <div class="row">
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-<img height="100%" width="auto" src="https://barbaradonnini.com/homosexualitytimeline/{{ object.image2_url|default_if_none:'#' }}" />
+<img class="detailimage" src="https://barbaradonnini.com/homosexualitytimeline/{{ object.image2|default_if_none:'#' }}" />
 </div>
 
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -91,7 +91,7 @@
 </div>
 {% endif %}
 
-<div class="row">
+<div class="row" style="margin-top:50px">
 	<div style="height:50px"></div>
 	<p><a href="/" class="btn btn-primary"><< Back to Timeline</a></p>
 </div>
