@@ -29,7 +29,7 @@
 </div>
 	<div style="height:25px"></div>
 <div class="row">
-	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="text-align:center">
 	<img class="detailimage2" src="https://barbaradonnini.com/homosexualitytimeline/{{ object.image1|default_if_none:'#' }}" />
 	<br>
 		<p style="font-style:italic; color:#A9A9A9">{{object.image_caption}} <a href="{{object.image_source}}" target="_blank">Image source</a>.</p>
@@ -46,6 +46,7 @@
 {% if event.year > 0 %}
         <date><strong>Date</strong>: {{ event.year }}</date>
     {% endif %}
+    <div style="height:10px"></div>
 {% if object.category %}
 <h2>{{ object.category }}</h2>
 {% endif %}
@@ -55,7 +56,7 @@
 {% endif %}
 
 {% if object.state %}
-<p><strong>State</strong>: {{ object.state|date }}</p>
+<p><strong>State</strong>: {{ object.state }}</p>
 {% endif %}
 
 {% if object.country %}
@@ -65,7 +66,6 @@
 	</div>
 </div>
 
-	<div style="height:25px"></div>
 <div class="row" style="margin-top:50px">
 <p>{{ object.description }}</p>
 </div>
