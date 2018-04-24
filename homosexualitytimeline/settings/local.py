@@ -1,5 +1,6 @@
 from .base import *
 
+[t.get('OPTIONS').update({'debug': True}) for t in TEMPLATES] # noqa
 
 DEBUG = True
 SECRET_KEY = 'asdfasdfasdf'

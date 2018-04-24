@@ -35,6 +35,9 @@ class TestView(ListView):
 class ReferenceView(TemplateView):
     template_name = 'maintimeline/references.html'
 
+class GrahamView(TemplateView):
+    template_name = 'maintimeline/graham.html'
+
 class EventCreate(CreateView):
     model = Event
     fields = '__all__'

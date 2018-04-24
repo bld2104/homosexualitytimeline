@@ -26,7 +26,13 @@
 <div class="row" style="height:400px">
 	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	<img class="detailimage" src="https://barbaradonnini.com/homosexualitytimeline/{{ object.image_url|default_if_none:'#' }}" />
+	<br>
+		<p style="font-style:italic; color:#A9A9A9">{{object.image_caption}} <a href="{{object.image_source}}" target="_blank">Image source</a>.</p>
+
 </div>
+
+	
+
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 {% if object.category %}
 <h2>{{ object.category }}</h2>
@@ -46,11 +52,14 @@
 
 	</div>
 </div>
+
 	<div style="height:25px"></div>
 <div class="row">
 <p>{{ object.description }}</p>
 </div>
-
+<div class="row" style="margin-top:20px">
+<p style="font-style:italic; color:#00BFB2">See <a href="/references">references page</a> for full bibliographic information.</p>
+</div>
 {% if object.image2 %}
 <div class="row">
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -83,6 +92,7 @@
 {% endif %}
 
 <div class="row">
+	<div style="height:50px"></div>
 	<p><a href="/" class="btn btn-primary"><< Back to Timeline</a></p>
 </div>
 </div>
