@@ -39,6 +39,7 @@
 	
 
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	
 	{% if event.year < 0 %}
 <date><strong>Date</strong>: {{ event.year|stringformat:"s"|slice:"1:" }} BCE</date>
 {% endif %}
@@ -49,6 +50,10 @@
     <div style="height:10px"></div>
 {% if object.category %}
 <h2>{{ object.category }}</h2>
+{% endif %}
+
+{% if event.is_general %}
+<p style="font-style:italic; color:#00BFB2">This event is not specifically related to Christianity, but is added for supporting context.</p>
 {% endif %}
 
 {% if object.city %}
@@ -67,7 +72,7 @@
 </div>
 
 <div class="row" style="margin-top:50px">
-<p>{{ object.description }}</p>
+<p>{{ object.description|linebreaks }}</p>
 </div>
 <div class="row" style="margin-top:20px">
 <p style="font-style:italic; color:#00BFB2">See <a href="/references">references page</a> for full bibliographic information.</p>
